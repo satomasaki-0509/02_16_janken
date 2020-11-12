@@ -1,5 +1,7 @@
 # ジャンケンの課題
 
+デプロイ先：https://satomasaki-0509.github.io/janken/
+
 ## プロダクトの紹介
 - ジャンケンの課題
 
