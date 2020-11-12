@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/sample.css">
+  <title>じゃんけん</title>
+</head>
+
+<body>
+  <header>
+    <h1>じゃんけん課題</h1>
+  </header>
+
+  <main>
+    <div id="com_hand" >コンピュータの出した手は？</div>
+    <div id="judgement">結果は？</div>
+
+    <ul>
+      <li id="gu_btn"> <img src="img/janken_gu.png" alt="グー"> </li>
+      <li id="cho_btn"> <img src="img/janken_choki.png" alt="チョキ"> </li>
+      <li id="par_btn"> <img src="img/janken_pa.png" alt="パー"> </li>
+    </ul>
+    
+  </main>
+
+  <footer>フッター</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(function () {
+      //ここに処理を追加
+      const result = ['<img src="img/janken_gu.png" alt="グー">', '<img src="img/janken_choki.png" alt="チョキ">', '<img src="img/janken_pa.png" alt="パー">'];
+      
+      $('#gu_btn').on('click', function () {
+        //自分の手はグー
+        let rand = Math.floor(Math.random() * 3);
+        //0コンピューターグー,1コンピュータチョキ,2コンピュータパー
+        //コンピュータの手を表示
+        $('#com_hand').html('コンピュータの手：' + result[rand]);
+        if (rand == 0) {
+          $('#judgement').text('あいこ');
+        } else if (rand == 1) {
+          $('#judgement').text('勝ち');
+        } else {
+          $('#judgement').text('負け');
+        }
+      });
+
+      $('#cho_btn').on('click', function (){
+        //自分の手はチョキ
+        let rand = Math.floor(Math.random() * 3);
+        //0コンピューターグー,1コンピュータチョキ,2コンピュータパー
+        //コンピュータの手を表示
+        $('#com_hand').html('コンピュータの手：' + result[rand]);
+        if (rand == 0) {
+          $('#judgement').text('負け');
+        } else if (rand == 1) {
+          $('#judgement').text('あいこ');
+        } else {
+          $('#judgement').text('勝ち');
+        }
+      });
+
+      $('#par_btn').on('click', function (){
+        //自分の手はパー
+        let rand = Math.floor(Math.random() * 3);
+        //0コンピューターグー,1コンピュータチョキ,2コンピュータパー
+        //コンピュータの手を表示
+        $('#com_hand').html('コンピュータの手：' + '' + result[rand]);
+        if (rand == 0) {
+          $('#judgement').text('勝ち');
+        } else if (rand == 1) {
+          $('#judgement').text('負け');
+        } else {
+          $('#judgement').text('あいこ');
+        }
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

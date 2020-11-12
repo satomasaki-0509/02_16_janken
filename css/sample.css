@@ -1,0 +1,10 @@
+li{
+  text-align: center;
+  list-style: none;
+  display: table-cell;
+  cursor: pointer;
+  background-color: aqua;
+}
+div{
+  text-align: center;
+}
